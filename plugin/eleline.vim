@@ -24,11 +24,7 @@ let s:jobs = {}
 
 function! ElelineBufnrWinnr() abort
   let l:bufnr = bufnr('%')
-  if !s:gui
-    " transform to circled num: nr2char(9311 + l:bufnr)
-    let l:bufnr = l:bufnr > 20 ? l:bufnr : nr2char(9311 + l:bufnr).' '
-  endif
-  return '  '.l:bufnr.' ❖ '.winnr().' '
+  return '  B '.l:bufnr.' W '.winnr().' '
 endfunction
 
 function! ElelineTotalBuf() abort
